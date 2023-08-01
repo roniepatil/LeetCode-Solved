@@ -50,3 +50,11 @@ class Solution:
                 stack.append([node.left, depth+1])
                 stack.append([node.right, depth+1])
         return res
+    
+a = Solution()
+node_7 = TreeNode(7)
+node_15 = TreeNode(15)
+node_9 = TreeNode(9)
+node_20 = TreeNode(20, node_15, node_7)
+root = TreeNode(3, node_9, node_20)
+print(a.maxDepth(root))
