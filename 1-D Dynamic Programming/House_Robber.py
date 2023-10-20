@@ -19,3 +19,4 @@ class Solution:
     def rob(self, nums: List[int]) -> int:
         print("hello")
         pass
+        pass
