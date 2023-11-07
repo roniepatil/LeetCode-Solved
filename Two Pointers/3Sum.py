@@ -48,6 +48,8 @@ class Solution:
                         l += 1
         return res
     
+        # Time:O(n^2)
+    
 
 nums = [-1,0,1,2,-1,-4]
 s = Solution()
