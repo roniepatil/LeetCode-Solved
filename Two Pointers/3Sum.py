@@ -30,10 +30,11 @@ class Solution:
         nums.sort()
 
         for i, a in enumerate(nums):
-            l, r = i + 1, len(nums) - 1
-
+            
             if i > 0 and a == nums[i - 1]:
                 continue
+
+            l, r = i + 1, len(nums) - 1
 
             while l < r:
                 _3sum = a + nums[l] + nums[r]
@@ -48,7 +49,7 @@ class Solution:
                         l += 1
         return res
     
-        # Time:O(n^2)
+        # Time: O(nlogn) + O(n^2) = O(n^2)
     
 
 nums = [-1,0,1,2,-1,-4]

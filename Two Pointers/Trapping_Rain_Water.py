@@ -28,3 +28,4 @@ class Solution:
                 max_r = max(max_r, height[r])
                 max_water += max(0, max_r - height[r])
         return max_water
+    # O(n)

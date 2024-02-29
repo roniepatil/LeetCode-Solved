@@ -13,20 +13,27 @@ from collections import Counter
 from typing import List
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        return [key for key, _ in Counter(nums).most_common(k)]
+        # return [key for key, _ in Counter(nums).most_common(k)]
     
-        # count = {}
-        # freq = [[] for i in range(len(nums) + 1)]
+        count = {}
+        freq = [[] for i in range(len(nums))]
+        res = []
 
-        # for n in nums:
-        #     count[n] = 1 + count.get(n, 0)
-        # for n, c in count.items():
-        #     freq[c].append(n)
+        for n in nums:
+            count[n] = 1 + count.get(n, 0)
 
-        # res = []
-        # for i in range(len(freq) - 1, 0, -1):
-        #     for n in freq[i]:
-        #         res.append(n)
-        #         if len(res) == k:
-        #             return res
+        for n, c in count.items():
+            freq[c].append(n)
+        
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
+                res.append(n)
+                if len(res) == k:
+                    return res
         # O(n)
+                
+nums = [1,2,3,4,5,6]
+k = 3
+
+a = Solution()
+print(a.topKFrequent(nums,k))
